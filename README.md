@@ -2,11 +2,11 @@
 
 ## Resources
 
-User controller
-Page management
-Visitors 
-Capture form 
-Contacts list
+- User controller
+- Page management
+- Visitors 
+- Capture form 
+- Contacts list
 
 ## Usage
 
