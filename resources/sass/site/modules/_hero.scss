@@ -1,0 +1,17 @@
+#hero {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $site-font-1;
+        text-transform: none;
+    }
+
+    form {
+        h3 {
+            color: $site-font-2;
+        }
+    }
+}

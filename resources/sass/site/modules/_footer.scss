@@ -1,0 +1,22 @@
+#footer {
+    background-color: $bg-footer;
+
+    a,
+    h5 {
+        color: $site-font-1;
+    }
+    iconify-icon.contact-icon {
+        color: $site-font-1;
+        font-size: 24px;
+    }
+
+    iconify-icon.social-link-icon {
+        color: $site-font-1;
+        font-size: 24px;
+    }
+
+    iconify-icon.social-link-icon.active,
+    iconify-icon.social-link-icon:hover {
+        color: $site-font-1-hover;
+    }
+}
