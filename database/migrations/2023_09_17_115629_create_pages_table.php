@@ -18,7 +18,10 @@ return new class extends Migration
             $table->longText('hero_text')->nullable();
             $table->longText('benefits_text')->nullable();     
             $table->longText('benefits_video')->nullable();                  
-            $table->longText('video')->nullable();
+            $table->longText('map')->nullable();
+            $table->longText('conditions')->nullable();
+            $table->longText('tour')->nullable();
+            $table->longText('link_tour')->nullable();
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();

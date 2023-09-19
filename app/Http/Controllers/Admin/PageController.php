@@ -70,7 +70,6 @@ class PageController extends Controller
 
         $data = ['user_id' => Auth::user()->id];
         $data['benefits_video'] = $request->benefits_video;
-        $data['benefits_text'] = $request->benefits_text;
 
         $logos = ['logo_header', 'logo_footer'];
 
@@ -109,8 +108,11 @@ class PageController extends Controller
             }
         }
 
-        if ($request->description) {
-            $data['hero_text'] = TextProcessor::store('hero', 'page', $request->hero_text);
+        $texts = ['hero_text', 'benefits_text', 'conditions', 'tour'];
+        foreach ($texts as $text) {
+            if ($request->$text) {
+                $data[$text] = TextProcessor::store($text, 'page', $request->$text);
+            }
         }
 
         if ($page->update($data)) {

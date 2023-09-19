@@ -65,9 +65,26 @@ Good journey!
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav align-items-center justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase  px-3" href="#benefits">Desfrute</a>
-                        </li>
+                        @if ($page->benefits_text)
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase  px-3" href="#benefits">Desfrute</a>
+                            </li>
+                        @endif
+                        @if ($page->tour)
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase  px-3" href="#tour">Tour</a>
+                            </li>
+                        @endif
+                        @if ($page->benefits_text)
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase  px-3" href="#map">Localização</a>
+                            </li>
+                        @endif
+                        @if ($page->conditions)
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase  px-3" href="#conditions">Condições</a>
+                            </li>
+                        @endif
                     </ul>
 
                     <div class="d-flex mt-5 mt-lg-0 ps-lg-3 align-items-center justify-content-center ">
@@ -98,7 +115,7 @@ Good journey!
     @yield('content')
 
     <section id="footer">
-        <div class="container footer-container mt-5 pt-3">
+        <div class="container footer-container pt-3">
             <footer
                 class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 d-flex flex-wrap justify-content-between ">
 
@@ -122,8 +139,8 @@ Good journey!
                         @endif
                         @if ($page->instagram)
                             <a href="{{ $page->instagram }}" target="_blank"
-                                title="{{ env('APP_NAME') }} no Instagram"><iconify-icon class="social-link-icon pe-4"
-                                    icon="mdi:instagram"></iconify-icon></a>
+                                title="{{ env('APP_NAME') }} no Instagram"><iconify-icon
+                                    class="social-link-icon pe-4" icon="mdi:instagram"></iconify-icon></a>
                         @endif
                         @if ($page->youtube)
                             <a href="{{ $page->youtube }}" target="_blank"

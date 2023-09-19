@@ -134,9 +134,9 @@
                                 @endphp
                                 <div class="d-flex flex-wrap justify-content-between">
                                     <div class="col-12 form-group px-0 mb-0">
-                                        <x-adminlte-text-editor name="benefits_text" label="Texto dos benefícios (segunda dobra)"
-                                            label-class="text-black" igroup-size="md" placeholder="Texto descritivo..."
-                                            :config="$config_benefits_text">
+                                        <x-adminlte-text-editor name="benefits_text"
+                                            label="Texto dos benefícios (segunda dobra)" label-class="text-black"
+                                            igroup-size="md" placeholder="Texto descritivo..." :config="$config_benefits_text">
                                             {!! old('benefits_text') ?? $page->benefits_text !!}
                                         </x-adminlte-text-editor>
                                     </div>
@@ -144,21 +144,97 @@
 
                                 <div class="d-flex flex-wrap justify-content-between">
                                     <div class="col-12 col-md-6 form-group px-0 pr-md-2">
-                                        <label for="video">Vídeo (link do Youtube)</label>
+                                        <label for="benefits_video">Vídeo (link do Youtube)</label>
 
                                         <input type="text" class="form-control" id="benefits_video" placeholder="Link"
-                                            name="benefits_video" value="{{ old('benefits_video') ?? $page->benefits_video }}">
+                                            name="benefits_video"
+                                            value="{{ old('benefits_video') ?? $page->benefits_video }}">
+
+                                        @if ($page->benefits_video)
+                                            <div class="d-flex justify-content-center mt-2">
+                                                <iframe class="embed-responsive-item rounded"
+                                                    src="{{ $page->benefits_video }}" title="YouTube video player"
+                                                    frameborder="0" title="Vídeo" width="640" height="360"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowfullscreen></iframe>
+                                            </div>
+                                        @endif
                                     </div>
-                                    @if ($page->benefits_video)
-                                        <div class="col-12 col-md-6 form-group px-0 pl-md-2">
-                                            <iframe class="embed-responsive-item rounded" src="{{ $page->benefits_video }}"
-                                                title="YouTube video player" frameborder="0" title="Vídeo" width="640"
-                                                height="360"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                allowfullscreen></iframe>
-                                        </div>
-                                    @endif
+
+                                    <div class="col-12 col-md-6 form-group px-0 pl-md-2">
+                                        <label for="map">Mapa (link do Google Maps)</label>
+
+                                        <input type="text" class="form-control" id="map" placeholder="Link"
+                                            name="map" value="{{ old('map') ?? $page->map }}">
+
+                                        @if ($page->map)
+                                            <div class="d-flex justify-content-center mt-2">
+                                                <iframe src="{{ $page->map }}" width="640" height="360"
+                                                    style="border:0;" allowfullscreen="" loading="lazy"
+                                                    referrerpolicy="no-referrer-when-downgrade"
+                                                    data-gtm-yt-inspected-8="true"></iframe>
+                                            </div>
+                                        @endif
+                                    </div>
                                 </div>
+
+                                @php
+                                    $config_conditions = [
+                                        'height' => '100',
+                                        'toolbar' => [
+                                            // [groupName, [list of button]]
+                                            ['style', ['style']],
+                                            ['font', ['bold', 'underline', 'clear']],
+                                            ['fontsize', ['fontsize']],
+                                            ['fontname', ['fontname']],
+                                            ['color', ['color']],
+                                            ['view', ['fullscreen', 'codeview', 'help']],
+                                        ],
+                                        'inheritPlaceholder' => true,
+                                    ];
+                                @endphp
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 form-group px-0 mb-0">
+                                        <x-adminlte-text-editor name="conditions" label="Texto das condições (sexta dobra)"
+                                            label-class="text-black" igroup-size="md" placeholder="Texto descritivo..."
+                                            :config="$config_conditions">
+                                            {!! old('conditions') ?? $page->conditions !!}
+                                        </x-adminlte-text-editor>
+                                    </div>
+                                </div>
+
+                                @php
+                                    $config_tour = [
+                                        'height' => '100',
+                                        'toolbar' => [
+                                            // [groupName, [list of button]]
+                                            ['style', ['style']],
+                                            ['font', ['bold', 'underline', 'clear']],
+                                            ['fontsize', ['fontsize']],
+                                            ['fontname', ['fontname']],
+                                            ['color', ['color']],
+                                            ['view', ['fullscreen', 'codeview', 'help']],
+                                        ],
+                                        'inheritPlaceholder' => true,
+                                    ];
+                                @endphp
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 form-group px-0 mb-0">
+                                        <x-adminlte-text-editor name="tour" label="Texto da seção tour (quarta dobra)"
+                                            label-class="text-black" igroup-size="md" placeholder="Texto descritivo..."
+                                            :config="$config_tour">
+                                            {!! old('tour') ?? $page->tour !!}
+                                        </x-adminlte-text-editor>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 form-group px-0 pr-md-2">
+                                        <label for="link_tour">Link para o Tour</label>
+                                        <input type="text" class="form-control" id="link_tour" placeholder="Link"
+                                            name="link_tour" value="{{ old('link_tour') ?? $page->link_tour }}">
+                                    </div>
+                                </div>
+
+
 
                                 <div class="d-flex flex-wrap justify-content-between">
                                     <div class="col-12 form-group px-0">

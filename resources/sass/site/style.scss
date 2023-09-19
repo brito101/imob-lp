@@ -1,8 +1,13 @@
+$imgPath: "../../img";
+
 @import "./modules/variables";
+@import "./modules/mixins";
 @import "./modules/buttons";
 @import "./modules/header";
 @import "./modules/hero";
 @import "./modules/benefits";
+@import "./modules/conditions";
+@import "./modules/tour";
 
 /*
 
@@ -101,7 +106,6 @@ a {
 }
 
 /* bootstrap button style  */
-
 
 /*---- navigation section style start ----*/
 

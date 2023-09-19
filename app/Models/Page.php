@@ -22,5 +22,9 @@ class Page extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['logo_header', 'logo_footer', 'hero_text', 'benefits_text', 'benefits_video', 'address', 'phone', 'email', 'facebook', 'twitter', 'instagram', 'youtube', 'user_id'];
+    protected $fillable = [
+        'logo_header', 'logo_footer', 'hero_text', 'benefits_text', 'benefits_video', 'map', 'conditions',
+        'tour', 'link_tour',
+        'address', 'phone', 'email', 'facebook', 'twitter', 'instagram', 'youtube', 'user_id'
+    ];
 }

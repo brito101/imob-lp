@@ -1,0 +1,31 @@
+#conditions {
+    position: relative;
+
+    &:after {
+        content: "";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: $index-back;
+        background: url("#{$imgPath}/conditions-bg.webp") top center no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    #conditions-img {
+        @include box-shadow(-25px -25px 0px 0px $site-font-2);
+        border: 1px solid $site-font-2;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        color: $site-font-1;
+    }
+}

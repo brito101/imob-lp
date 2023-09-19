@@ -1,4 +1,5 @@
 /** Colors */
+/** x-index */
 .btn {
   --bs-btn-padding-x: 1.88em;
   --bs-btn-padding-y: 0.75rem;
@@ -61,6 +62,54 @@
 #benefits h5,
 #benefits h6 {
   color: #fff;
+}
+
+#conditions {
+  position: relative;
+}
+#conditions:after {
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background: url("../../img/conditions-bg.webp") top center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#conditions #conditions-img {
+  box-shadow: -25px -25px 0px 0px #c46c46;
+  -moz-box-shadow: -25px -25px 0px 0px #c46c46;
+  -webkit-box-shadow: -25px -25px 0px 0px #c46c46;
+  border: 1px solid #c46c46;
+}
+#conditions h1,
+#conditions h2,
+#conditions h3,
+#conditions h4,
+#conditions h5,
+#conditions h6,
+#conditions p {
+  color: #fff;
+}
+
+section#tour {
+  background: var(--linear-gradient);
+}
+section#tour h1,
+section#tour h2,
+section#tour h3,
+section#tour h4,
+section#tour h5,
+section#tour h6,
+section#tour p {
+  color: #fff;
+}
+section#tour h2 {
+  font-weight: 700 !important;
+  font-size: 3.5rem;
 }
 
 /*

@@ -38,10 +38,11 @@
                         <div class="row">
                             <div class="col-12">
                                 <h4>Versionamento:</h4>
-
                                 <x-adminlte-callout theme="info" class="elevation-2" title-class="text-uppercase"
                                     title="1.0.0">
+                                    <x-adminlte-profile-row-item text="2023-09-18" url="#" badge="primary" />
                                     <ul>
+                                        <li>Módulo de Contatos</li>
                                         <li>Módulo de ACL com perfis e permissões</li>
                                         <li>Módulo de Usuários</li>
                                         <li>Changelog</li>
@@ -53,7 +54,7 @@
                     </div>
                     <div class="col-12 col-md-12 col-lg-6 order-1 order-md-2">
 
-                        <x-adminlte-profile-widget name="{{ env('APP_NAME')}}" desc="{{ env('APP_DES')}}"
+                        <x-adminlte-profile-widget name="{{ env('APP_NAME') }}" desc="{{ env('APP_DES') }}"
                             theme="bg-gradient-dark" img="{{ asset('img/favicon.svg') }}" layout-type="classic">
                             <x-adminlte-profile-row-item
                                 title="Rodrigo Carvalho de Brito, e-mail: contato@rodrigobrito.dev.br"
