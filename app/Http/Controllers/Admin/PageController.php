@@ -67,7 +67,7 @@ class PageController extends Controller
         CheckPermission::checkAuth('Editar Página');
         $page = Page::find($id);
         $data = $request->all();
-
+        
         $data = ['user_id' => Auth::user()->id];
         $data['benefits_video'] = $request->benefits_video;
 
@@ -108,11 +108,17 @@ class PageController extends Controller
             }
         }
 
-        $texts = ['hero_text', 'benefits_text', 'conditions', 'tour'];
+        $texts = ['hero_text', 'benefits_text', 'features', 'conditions', 'tour', 'progress'];
         foreach ($texts as $text) {
             if ($request->$text) {
                 $data[$text] = TextProcessor::store($text, 'page', $request->$text);
             }
+        }
+
+        $features = ['two_rooms', 'three_rooms', 'court', 'pool', 'childreen_pool', 'playground', 'party_room', 'gourmet', 'security', 'green_area', 'commerce'];
+
+        foreach($features as $feat) {
+            $data[$feat] = $request->$feat == true ? 1 : 0;
         }
 
         if ($page->update($data)) {

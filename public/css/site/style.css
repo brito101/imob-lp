@@ -64,6 +64,42 @@
   color: #fff;
 }
 
+#features {
+  position: relative;
+}
+#features:after {
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background: url("../../img/benefits-bg.jpg") top center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#features #conditions-img {
+  box-shadow: -25px -25px 0px 0px #c46c46;
+  -moz-box-shadow: -25px -25px 0px 0px #c46c46;
+  -webkit-box-shadow: -25px -25px 0px 0px #c46c46;
+  border: 1px solid #c46c46;
+}
+#features h1,
+#features h2,
+#features h3,
+#features h4,
+#features h5,
+#features h6,
+#features p {
+  color: #fff;
+}
+#features .carousel-indicators button {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+
 #conditions {
   position: relative;
 }
@@ -184,6 +220,7 @@ h6,
   line-height: var(--heading-line-height);
   letter-spacing: 0.065rem;
   text-transform: uppercase;
+  font-family: "Federo", sans-serif;
 }
 
 h6 {

@@ -7,6 +7,9 @@
     @if ($page->benefits_text)
         @include('site.partials.benefits')
     @endif
+    @if ($page->features)
+        @include('site.partials.features')
+    @endif
     @if ($page->tour)
         @include('site.partials.tour')
     @endif
@@ -15,5 +18,8 @@
     @endif
     @if ($page->conditions)
         @include('site.partials.conditions')
+    @endif
+    @if ($page->progress)
+        @include('site.partials.progress')
     @endif
 @endsection

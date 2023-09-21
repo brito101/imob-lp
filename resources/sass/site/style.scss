@@ -6,6 +6,7 @@ $imgPath: "../../img";
 @import "./modules/header";
 @import "./modules/hero";
 @import "./modules/benefits";
+@import "./modules/features";
 @import "./modules/conditions";
 @import "./modules/tour";
 
@@ -89,6 +90,7 @@ h6,
     line-height: var(--heading-line-height);
     letter-spacing: 0.065rem;
     text-transform: uppercase;
+    font-family: "Federo", sans-serif;
 }
 
 h6 {

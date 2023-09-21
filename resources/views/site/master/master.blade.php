@@ -17,7 +17,7 @@ Good journey!
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="twitter:card" content="summary_large_image" />
-
+    <link rel="shortcut icon" href="{{ asset('img/icon.png') }}" />
     <!--vendor css ================================================== -->
     <link rel="stylesheet" type="text/css" href="css/vendor.css">
 
@@ -27,9 +27,6 @@ Good journey!
     <!--Bootstrap ================================================== -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-
     <!-- Style Sheet ================================================== -->
     <link rel="stylesheet" href="{{ asset('css/site/style.css') }}" />
     <!-- Google Fonts ================================================== -->
@@ -38,8 +35,7 @@ Good journey!
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,300&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Federo&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -67,7 +63,7 @@ Good journey!
                     <ul class="navbar-nav align-items-center justify-content-end flex-grow-1 pe-3">
                         @if ($page->benefits_text)
                             <li class="nav-item">
-                                <a class="nav-link text-uppercase  px-3" href="#benefits">Desfrute</a>
+                                <a class="nav-link text-uppercase  px-3" href="#benefits">Benefícios</a>
                             </li>
                         @endif
                         @if ($page->tour)
@@ -83,6 +79,11 @@ Good journey!
                         @if ($page->conditions)
                             <li class="nav-item">
                                 <a class="nav-link text-uppercase  px-3" href="#conditions">Condições</a>
+                            </li>
+                        @endif
+                        @if ($page->progress)
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase  px-3" href="#services">Obra</a>
                             </li>
                         @endif
                     </ul>
@@ -212,7 +213,7 @@ Good journey!
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
-
+    @yield('custom_js')
 </body>
 
 </html>
