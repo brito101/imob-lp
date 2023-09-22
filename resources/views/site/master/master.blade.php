@@ -17,7 +17,7 @@ Good journey!
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="keywords" content="{{ $page->keywords }}" />
+    <meta name="s" content="{{ $page->keywords }}" />
     <link rel="shortcut icon" href="{{ asset('img/icon.png') }}" />
     <!--vendor css ================================================== -->
     <link rel="stylesheet" type="text/css" href="css/vendor.css">
@@ -37,6 +37,7 @@ Good journey!
         href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,300&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Federo&display=swap" rel="stylesheet">
+    <title>{{ env('APP_NAME') }}</title>
     {!! $page->pixel_header !!}
 </head>
 
