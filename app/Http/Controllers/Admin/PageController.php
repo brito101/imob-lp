@@ -24,9 +24,15 @@ class PageController extends Controller
     public function index()
     {
         CheckPermission::checkAuth('Editar Página');
-        $page = Page::firstOrCreate(
-            ['user_id' =>  Auth::user()->id],
-        );
+
+        $page = Page::first();
+
+        if (!$page) {
+            $page = Page::create(
+                ['user_id' =>  Auth::user()->id],
+            );
+        }
+
         $images = ModelsImage::all();
         $preview = [];
         foreach ($images as $img) {
