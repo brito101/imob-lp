@@ -40,6 +40,7 @@ return new class extends Migration
             $table->integer('structure')->default(0);
             $table->integer('front')->default(0);
             $table->integer('finishing')->default(0);
+            $table->string('headline')->nullable();
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
@@ -47,6 +48,9 @@ return new class extends Migration
             $table->string('twitter')->nullable();
             $table->string('instagram')->nullable();
             $table->string('youtube')->nullable();
+            $table->longText('pixel_header')->nullable();
+            $table->longText('pixel_body')->nullable();
+            $table->text('keywords')->nullable();
             $table->foreignId('user_id')->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');

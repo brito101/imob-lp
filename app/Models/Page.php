@@ -26,6 +26,8 @@ class Page extends Model
         'logo_header', 'logo_footer', 'hero_text', 'benefits_text', 'benefits_video', 'map', 'conditions',
         'tour', 'link_tour', 'progress', 'installations', 'foundation', 'structure', 'front', 'finishing',
         'features', 'two_rooms', 'three_rooms', 'court', 'pool', 'childreen_pool', 'playground', 'party_room', 'gourmet', 'security', 'green_area', 'commerce',
-        'address', 'phone', 'email', 'facebook', 'twitter', 'instagram', 'youtube', 'user_id'
+        'headline',
+        'address', 'phone', 'email', 'facebook', 'twitter', 'instagram', 'youtube', 'user_id',
+        'pixel_header', 'pixel_body', 'keywords'
     ];
 }

@@ -6,11 +6,13 @@ use App\Helpers\CheckPermission;
 use App\Helpers\TextProcessor;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\PageRequest;
+use App\Models\Image as ModelsImage;
 use App\Models\Page;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Image;
 
@@ -25,7 +27,14 @@ class PageController extends Controller
         $page = Page::firstOrCreate(
             ['user_id' =>  Auth::user()->id],
         );
-        return view('admin.page.edit', compact('page'));
+        $images = ModelsImage::all();
+        $preview = [];
+        foreach ($images as $img) {
+            $image = url('storage/page/slide/' . $img->photo);
+            $preview[] = "<img src='{$image}' class='file-preview-image kv-preview-data' alt='Desert' title='Desert'>";
+        }
+
+        return view('admin.page.edit', compact('page', 'preview'));
     }
 
     /**
@@ -67,11 +76,61 @@ class PageController extends Controller
         CheckPermission::checkAuth('Editar Página');
         $page = Page::find($id);
         $data = $request->all();
-        
+
         $data = ['user_id' => Auth::user()->id];
         $data['benefits_video'] = $request->benefits_video;
+        $data['pixel_header'] = $request->pixel_header;
+        $data['pixel_body'] = $request->pixel_body;
+        $data['keywords'] = $request->keywords;
 
         $logos = ['logo_header', 'logo_footer'];
+
+
+        if ($request->slide) {
+            ModelsImage::query()->delete();
+
+            $rules = array(
+                'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
+            );
+
+            $validator = Validator::make($request->slide, $rules);
+
+            if ($validator) {
+                foreach ($request->slide as $key => $img) {
+                    $name = $key;
+                    $extension = $img->extension();
+
+                    $nameFile = "{$name}.{$extension}";
+                    $i['photo'] = $nameFile;
+                    $i['user_id'] =  Auth::user()->id;
+                    $file = ModelsImage::create($i);
+                    $file->save();
+
+                    $destinationPath = storage_path() . '/app/public/page/slide/';
+
+                    if (!file_exists($destinationPath)) {
+                        mkdir($destinationPath, 755, true);
+                    }
+
+                    $img = Image::make($img);
+                    $img->save($destinationPath . '/' . $nameFile);
+
+                    if (!$img) {
+                        return redirect()
+                            ->back()
+                            ->withInput()
+                            ->with('error', 'Falha ao fazer o upload da imagem');
+                    }
+                }
+            } else {
+                return redirect()
+                    ->back()
+                    ->withInput()
+                    ->with('error', 'Falha ao fazer o upload das imagens do carrossel');
+            }
+        } else {
+            ModelsImage::query()->delete();
+        }
 
         foreach ($logos as $logo) {
             if ($request->hasFile($logo) && $request->file($logo)->isValid()) {
@@ -117,7 +176,7 @@ class PageController extends Controller
 
         $features = ['two_rooms', 'three_rooms', 'court', 'pool', 'childreen_pool', 'playground', 'party_room', 'gourmet', 'security', 'green_area', 'commerce'];
 
-        foreach($features as $feat) {
+        foreach ($features as $feat) {
             $data[$feat] = $request->$feat == true ? 1 : 0;
         }
 

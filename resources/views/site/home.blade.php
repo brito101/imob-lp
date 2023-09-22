@@ -7,7 +7,7 @@
     @if ($page->benefits_text)
         @include('site.partials.benefits')
     @endif
-    @if ($page->features)
+    @if ($page->features || $page->headline)
         @include('site.partials.features')
     @endif
     @if ($page->tour)

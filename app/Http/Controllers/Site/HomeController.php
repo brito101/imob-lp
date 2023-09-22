@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Site\ContactRequest;
 use App\Models\Contact;
+use App\Models\Image;
 use App\Models\Page;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,8 @@ class HomeController extends Controller
     public function index()
     {
         $page = Page::first();
-        return view('site.home', compact('page'));
+        $images = Image::all();
+        return view('site.home', compact('page', 'images'));
     }
 
     public function contact(ContactRequest $request)

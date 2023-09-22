@@ -316,6 +316,35 @@
                                 </div>
 
                                 <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 form-group px-0 pr-md-2">
+                                        <x-adminlte-textarea name="headline"
+                                            label="Headline (texto acima das imagens do carrossel)"
+                                            placeholder="Texto curto">{{ old('headline') ?? $page->headline }}
+                                        </x-adminlte-textarea>
+                                    </div>
+                                </div>
+                                @if ($preview !== '')
+                                    @php
+                                        $config_slide = [
+                                            'allowedFileTypes' => ['image'],
+                                            'browseOnZoneClick' => true,
+                                            'initialPreview' => $preview,
+                                        ];
+                                    @endphp
+                                @else
+                                    @php
+                                        $config_slide = [
+                                            'allowedFileTypes' => ['image'],
+                                            'browseOnZoneClick' => true,
+                                        ];
+                                    @endphp
+                                @endif
+
+                                <x-adminlte-input-file-krajee id="slide" name="slide[]" igroup-size="sm"
+                                    data-msg-placeholder="Escolha múltiplas fotos..." data-show-cancel="false"
+                                    data-show-close="false" multiple :config="$config_slide" disable-feedback />
+
+                                <div class="d-flex flex-wrap justify-content-between">
                                     <div class="col-12 col-md-6 form-group px-0 pr-md-2">
                                         <label for="benefits_video">Vídeo (link do Youtube)</label>
 
@@ -521,6 +550,30 @@
                                     </div>
                                 </div>
 
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 form-group px-0 pr-md-2">
+                                        <x-adminlte-textarea name="pixel_header" label="Pixel (Head)"
+                                            placeholder="Insira o código...">{{ old('pixel_header') ?? $page->pixel_header }}
+                                        </x-adminlte-textarea>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 form-group px-0 pr-md-2">
+                                        <x-adminlte-textarea name="pixel_body" label="Pixel (Body)"
+                                            placeholder="Insira o código...">{{ old('pixel_body') ?? $page->pixel_body }}
+                                        </x-adminlte-textarea>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 form-group px-0 pr-md-2">
+                                        <x-adminlte-textarea name="keywords" label="Palavras chave (meta key)"
+                                            placeholder="Palavras...">{{ old('keywords') ?? $page->keywords }}
+                                        </x-adminlte-textarea>
+                                    </div>
+                                </div>
+
                             </div>
 
                             <div class="card-footer">
@@ -533,4 +586,13 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('custom_js')
+    <script>
+        setInterval(function() {
+            $(".file-actions").remove();
+            $(".file-drag-handle").remove();
+        }, 5000);
+    </script>
 @endsection

@@ -55,6 +55,8 @@ class PageSeeder extends Seeder
             'security' => 1,
             'green_area' => 1,
             'commerce' => 1,
+            'headline' => 'Viva perto da praia com
+            segurança e tranquilidade',
             // 'email',
             // 'facebook',
             // 'twitter',

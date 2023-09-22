@@ -16,7 +16,7 @@ class PageRequest extends FormRequest
 
     public function prepareForValidation()
     {
-      
+
         $this->merge([
             'two_rooms' => $this->two_rooms == null ? false : true,
             'three_rooms' => $this->three_rooms == null ? false : true,
@@ -57,6 +57,7 @@ class PageRequest extends FormRequest
             'security' => 'nullable|boolean',
             'green_area' => 'nullable|boolean',
             'commerce' => 'nullable|boolean',
+            'headline' => 'nullable|max:191',
             'map' => 'nullable|url|max:4294967295',
             'conditions' => 'nullable|max:4294967295',
             'tour' => 'nullable|max:4294967295',
@@ -74,6 +75,9 @@ class PageRequest extends FormRequest
             'twitter' => 'nullable|max:191',
             'instagram' => 'nullable|max:191',
             'youtube' => 'nullable|max:191',
+            'pixel_header' => 'nullable|max:4294967295',
+            'pixel_body' => 'nullable|max:4294967295',
+            'keywords' => 'nullable|max:4294967295',
         ];
     }
 }
