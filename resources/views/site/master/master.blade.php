@@ -19,6 +19,8 @@ Good journey!
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="s" content="{{ $page->keywords }}" />
     <link rel="shortcut icon" href="{{ asset('img/icon.png') }}" />
+    <meta name="description" content="{{env('APP_DES') ?? "Felicitaà Barra - Condomínio Clube" }}">
+
     <!--vendor css ================================================== -->
     <link rel="stylesheet" type="text/css" href="css/vendor.css">
 
