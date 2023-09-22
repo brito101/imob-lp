@@ -37,7 +37,7 @@ Good journey!
         href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,300&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Federo&display=swap" rel="stylesheet">
-    <title>{{ env('APP_NAME') }}</title>
+    <title>{{ env('APP_NAME') ?? "Felicitaà Barra" }}</title>
     {!! $page->pixel_header !!}
 </head>
 
