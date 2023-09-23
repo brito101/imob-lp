@@ -1,9 +1,10 @@
 <section id="benefits" class=" position-relative  py-5">
     <div class="testimonial-pattern-overlay pattern-left position-absolute d-none d-md-block">
-        <img src="{{ asset('img/benefits-left.png') }}" alt="pattern">
+        <img src="{{ asset('img/benefits-left.png') }}" alt="pattern" width="355" height="295">
     </div>
     <div class="testimonial-pattern-overlay pattern-right position-absolute d-none d-md-block">
-        <img src="{{ asset('img/benefits-right.png') }}" alt="pattern">
+        <img src="{{ asset('img/benefits-right.png') }}" alt="pattern" width="272"
+            height="238">
     </div>
 
     <div class="container py-5">

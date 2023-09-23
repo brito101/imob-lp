@@ -1,6 +1,6 @@
 <section id="tour" class="position-relative">
     <div class="cta-pattern-overlay pattern-left position-absolute top-50 start-0 translate-middle-y">
-        <img src="{{ asset('img/tour-pattern.png') }}" alt="pattern">
+        <img src="{{ asset('img/tour-pattern.png') }}" alt="pattern" width="292" height="269">
     </div>
     <div class="container py-5">
         <div class="row align-items-center my-5">
