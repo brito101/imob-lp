@@ -76,7 +76,7 @@
                             @foreach ($images as $image)
                                 <div class="carousel-item {{ $loop->index == 0 ? 'active' : '' }}">
                                     <img src="{{ url('storage/page/slide/' . $image->photo) }}" class="d-block w-100"
-                                        alt="...">
+                                        alt="..." width="864" height="575">
                                 </div>
                             @endforeach
                         </div>
@@ -113,7 +113,7 @@
                             {{ $image }}
                                 <div class="carousel-item {{ $loop->index == 0 ? 'active' : '' }}">
                                     <img src="{{ asset('img/' . $image . '.jpg') }}" class="d-block w-100"
-                                        alt="...">
+                                        alt="..." width="864" height="575">
                                 </div>
                             @endforeach
                         </div>
