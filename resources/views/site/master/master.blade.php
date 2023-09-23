@@ -19,7 +19,7 @@ Good journey!
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="s" content="{{ $page->keywords }}" />
     <link rel="shortcut icon" href="{{ asset('img/icon.png') }}" />
-    <meta name="description" content="{{ env('APP_DES') ?? 'Felicitaà Barra - Condomínio Clube' }}">
+    <meta name="description" content="{{ env('APP_DES') ?? 'Felicittà  Barra - Condomínio Clube' }}">
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
@@ -35,7 +35,7 @@ Good journey!
         href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,300&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Federo&display=swap" rel="stylesheet">
-    <title>{{ env('APP_NAME') ?? 'Felicitaà Barra' }}</title>
+    <title>{{ env('APP_NAME') ?? 'Felicittà Barra' }}</title>
     {!! $page->pixel_header !!}
 </head>
 
