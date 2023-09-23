@@ -84,11 +84,7 @@ class PageController extends Controller
 
         $data = $request->all();
 
-        $data = ['user_id' => Auth::user()->id];
-        $data['benefits_video'] = $request->benefits_video;
-        $data['pixel_header'] = $request->pixel_header;
-        $data['pixel_body'] = $request->pixel_body;
-        $data['keywords'] = $request->keywords;
+        $data['user_id'] = Auth::user()->id;
 
         $logos = ['logo_header', 'logo_footer'];
 
