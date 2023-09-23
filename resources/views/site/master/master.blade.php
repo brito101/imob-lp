@@ -46,10 +46,10 @@ Good journey!
             @if ($page->logo_header)
                 <a class="navbar-brand" href="{{ route('site') }}"><img
                         src="{{ url('storage/page/' . $page->logo_header) }}" alt="{{ env('APP_NAME') }}"
-                        aria-label="Logo"></a>
+                        aria-label="Logo" width="187" height="122"></a>
             @else
                 <a class="navbar-brand" href="{{ route('site') }}"><img src="{{ asset('img/logo-header.png') }}"
-                        alt="{{ env('APP_NAME') }}" aria-label="Logo"></a>
+                        alt="{{ env('APP_NAME') }}" aria-label="Logo" width="187" height="122"></a>
             @endif
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
