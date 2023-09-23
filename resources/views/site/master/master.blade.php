@@ -126,9 +126,9 @@ Good journey!
                 <div class=" col-md-4 mt-5 mt-md-0 ">
                     @if ($page->logo_footer)
                         <img src="{{ url('storage/page/' . $page->logo_footer) }}" alt="{{ env('APP_NAME') }}"
-                            class="my-3" width="150" height="160">
+                            class="my-3" width="150" height="60">
                     @else
-                        <img src="{{ asset('img/logo-footer.png') }}" alt="{{ env('APP_NAME') }}" class="my-3" width="150" height="160">
+                        <img src="{{ asset('img/logo-footer.png') }}" alt="{{ env('APP_NAME') }}" class="my-3" width="150" height="60">
                     @endif
                     <div class="d-flex align-items-center ">
                         @if ($page->facebook)
