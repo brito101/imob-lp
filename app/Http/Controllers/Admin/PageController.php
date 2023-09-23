@@ -80,7 +80,8 @@ class PageController extends Controller
     public function update(PageRequest $request, string $id)
     {
         CheckPermission::checkAuth('Editar Página');
-        $page = Page::find($id);
+        $page = Page::first();
+
         $data = $request->all();
 
         $data = ['user_id' => Auth::user()->id];
