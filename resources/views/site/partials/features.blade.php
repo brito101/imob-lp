@@ -49,7 +49,7 @@
                 </div>
                 <div class="col-12 col-md-6 d-flex justify-content-center">
                     <div class="col-12 col-md-8 pt-5 text-center">
-                        <img src="{{ asset('img/card.png') }}" alt="Cartão" title="Cartão">
+                        <img src="{{ asset('img/card.png') }}" alt="Cartão" title="Cartão" width="400" height="420">
                     </div>
                 </div>
             </div>
