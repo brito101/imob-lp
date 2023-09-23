@@ -20,10 +20,6 @@ Good journey!
     <meta name="s" content="{{ $page->keywords }}" />
     <link rel="shortcut icon" href="{{ asset('img/icon.png') }}" />
     <meta name="description" content="{{env('APP_DES') ?? "Felicitaà Barra - Condomínio Clube" }}">
-
-    <!--vendor css ================================================== -->
-    <link rel="stylesheet" type="text/css" href="css/vendor.css">
-
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
