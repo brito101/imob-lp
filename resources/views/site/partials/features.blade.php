@@ -29,7 +29,7 @@
                                 @foreach ($elements as $item)
                                     <div class="carousel-item {{ $loop->index == 0 ? 'active' : '' }}">
                                         <img src="{{ asset('img/' . $item . '.png') }}" class="d-block w-100"
-                                            alt="...">
+                                            alt="..." width="376" height="376">
                                     </div>
                                 @endforeach
                             </div>
