@@ -128,7 +128,8 @@ Good journey!
                         <img src="{{ url('storage/page/' . $page->logo_footer) }}" alt="{{ env('APP_NAME') }}"
                             class="my-3" width="150" height="60">
                     @else
-                        <img src="{{ asset('img/logo-footer.png') }}" alt="{{ env('APP_NAME') }}" class="my-3" width="150" height="60">
+                        <img src="{{ asset('img/logo-footer.png') }}" alt="{{ env('APP_NAME') }}" class="my-3"
+                            width="150" height="60">
                     @endif
                     <div class="d-flex align-items-center ">
                         @if ($page->facebook)
@@ -195,6 +196,11 @@ Good journey!
                 </div>
             </footer>
         </div>
+
+        <a id="robbu-whatsapp-button" target="_blank"
+            href="https://api.whatsapp.com/send?phone=55{{ preg_replace('/\D/', '', explode('|', $page->phone)[1]) }}&text=Tenho interesse no anúncio em {{ env('APP_URL') }}">
+            <img src="{{ asset('img/whatsapp.svg') }}"> </a>
+
     </section>
 
 
