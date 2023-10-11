@@ -197,9 +197,14 @@ Good journey!
             </footer>
         </div>
 
-        <a id="robbu-whatsapp-button" target="_blank"
-            href="https://api.whatsapp.com/send?phone=55{{ preg_replace('/\D/', '', explode('|', $page->phone)[1]) }}&text=Tenho interesse no anúncio em {{ env('APP_URL') }}">
-            <img src="{{ asset('img/whatsapp.svg') }}"> </a>
+        @if ($page->phone)
+            @php
+                $phone = explode('|', $page->phone);
+            @endphp
+            <a id="robbu-whatsapp-button" target="_blank"
+                href="https://api.whatsapp.com/send?phone=55{{ preg_replace('/\D/', '', $phone[1] ?? $phone[0]) }}&text=Tenho interesse no anúncio em {{ env('APP_URL') }}">
+                <img src="{{ asset('img/whatsapp.svg') }}"> </a>
+        @endif
 
     </section>
 
